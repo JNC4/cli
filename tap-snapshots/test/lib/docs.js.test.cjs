@@ -216,24 +216,6 @@ upon by the current project.
 
 
 
-#### \`allow-git\`
-
-* Default: "all"
-* Type: "all", "none", or "root"
-
-Limits the ability for npm to fetch dependencies from git references. That
-is, dependencies that point to a git repo instead of a version or semver
-range. Please note that this could leave your tree incomplete and some
-packages may not function as intended or designed.
-
-\`all\` allows any git dependencies to be fetched and installed. \`none\`
-prevents any git dependencies from being fetched and installed. \`root\` only
-allows git dependencies defined in your project's package.json to be fetched
-installed. Also allows git dependencies to be fetched for other commands
-like \`npm view\`
-
-
-
 #### \`allow-same-version\`
 
 * Default: false
@@ -2229,7 +2211,6 @@ Array [
   "access",
   "all",
   "allow-same-version",
-  "allow-git",
   "also",
   "audit",
   "audit-level",
@@ -2404,7 +2385,6 @@ Array [
   "access",
   "all",
   "allow-same-version",
-  "allow-git",
   "also",
   "audit",
   "audit-level",
@@ -2583,7 +2563,6 @@ Object {
   "_auth": null,
   "access": null,
   "all": false,
-  "allowGit": "all",
   "allowSameVersion": false,
   "audit": true,
   "auditLevel": null,
@@ -3011,9 +2990,8 @@ Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
-[--allow-git <all|none|root>] [--no-audit] [--no-bin-links] [--no-fund]
-[--dry-run]
+[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+[--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3040,9 +3018,6 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
-
-  --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -3087,7 +3062,6 @@ aliases: clean-install, ic, install-clean, isntall-clean
 #### \`strict-peer-deps\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
-#### \`allow-git\`
 #### \`audit\`
 #### \`bin-links\`
 #### \`fund\`
@@ -3184,8 +3158,7 @@ Options:
 [--global-style] [--strict-peer-deps] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--ignore-scripts] [--allow-git <all|none|root>] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run]
+[--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3212,9 +3185,6 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
-
-  --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -3259,7 +3229,6 @@ alias: ddp
 #### \`omit\`
 #### \`include\`
 #### \`ignore-scripts\`
-#### \`allow-git\`
 #### \`audit\`
 #### \`bin-links\`
 #### \`fund\`
@@ -3909,9 +3878,9 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
-[--foreground-scripts] [--ignore-scripts] [--allow-git <all|none|root>]
-[--no-audit] [--before <date>] [--no-bin-links] [--no-fund] [--dry-run]
-[--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--foreground-scripts] [--ignore-scripts] [--no-audit] [--before <date>]
+[--no-bin-links] [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3956,9 +3925,6 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
-
-  --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4021,7 +3987,6 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`package-lock-only\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
-#### \`allow-git\`
 #### \`audit\`
 #### \`before\`
 #### \`bin-links\`
@@ -4046,9 +4011,8 @@ Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
-[--allow-git <all|none|root>] [--no-audit] [--no-bin-links] [--no-fund]
-[--dry-run]
+[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+[--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4075,9 +4039,6 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
-
-  --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4122,7 +4083,6 @@ aliases: cit, clean-install-test, sit
 #### \`strict-peer-deps\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
-#### \`allow-git\`
 #### \`audit\`
 #### \`bin-links\`
 #### \`fund\`
@@ -4146,9 +4106,9 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
-[--foreground-scripts] [--ignore-scripts] [--allow-git <all|none|root>]
-[--no-audit] [--before <date>] [--no-bin-links] [--no-fund] [--dry-run]
-[--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--foreground-scripts] [--ignore-scripts] [--no-audit] [--before <date>]
+[--no-bin-links] [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4193,9 +4153,6 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
-
-  --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4258,7 +4215,6 @@ alias: it
 #### \`package-lock-only\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
-#### \`allow-git\`
 #### \`audit\`
 #### \`before\`
 #### \`bin-links\`
@@ -4286,8 +4242,7 @@ Options:
 [--global-style] [--strict-peer-deps] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--ignore-scripts] [--allow-git <all|none|root>] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run]
+[--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4323,9 +4278,6 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
-
-  --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4373,7 +4325,6 @@ alias: ln
 #### \`omit\`
 #### \`include\`
 #### \`ignore-scripts\`
-#### \`allow-git\`
 #### \`audit\`
 #### \`bin-links\`
 #### \`fund\`
@@ -5759,6 +5710,9 @@ Subcommands:
   gitlab
     Create a trusted relationship between a package and GitLab CI/CD
 
+  circleci
+    Create a trusted relationship between a package and CircleCI
+
   list
     List trusted relationships for a package
 
@@ -5777,12 +5731,41 @@ Note: This command is unaware of workspaces.
 
 #### Synopsis
 #### Flags
+#### \`file\`
+#### \`repository\`
+#### \`environment\`
+#### \`yes\`
+#### \`json\`
+#### \`registry\`
+#### \`dry-run\`
 #### Synopsis
 #### Flags
+#### \`file\`
+#### \`project\`
+#### \`environment\`
+#### \`yes\`
+#### \`json\`
+#### \`registry\`
+#### \`dry-run\`
 #### Synopsis
 #### Flags
+#### \`org-id\`
+#### \`project-id\`
+#### \`pipeline-definition-id\`
+#### \`vcs-origin\`
+#### \`context-id\`
+#### \`yes\`
+#### \`json\`
+#### \`dry-run\`
+#### Synopsis
+#### Configuration
+#### \`json\`
+#### \`registry\`
 #### Synopsis
 #### Flags
+#### \`id\`
+#### \`dry-run\`
+#### \`registry\`
 `
 
 exports[`test/lib/docs.js TAP usage undeprecate > must match snapshot 1`] = `
